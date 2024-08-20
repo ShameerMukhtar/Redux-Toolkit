@@ -1,23 +1,27 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
+import { counterActions } from "../../store";
 
 const Controls=()=>{
 
 // useRef
 const inputElement=useRef();
 
+const dispatch =useDispatch();
 
 
-const dispatch=useDispatch();
+
 
 const handleIncrement=()=>{
+ // console.log("called");
+ dispatch(counterActions.increment());
   
-  dispatch({type:"INCREMENT"});
 }
 
 
 const handleDecrement=()=>{
-dispatch({type:"DECREMENT"});
+  dispatch(counterActions.decrement());
+//  console.log("called");
 }
 // to add user number
 const handleAdd=()=>{
