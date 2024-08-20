@@ -25,13 +25,10 @@ const handleDecrement=()=>{
 }
 // to add user number
 const handleAdd=()=>{
-  let value=inputElement.current.value;
- 
-  if(value){
-  dispatch({type:"ADD",
-payload:value
   
-})
+ 
+  if(inputElement.current.value){
+  dispatch(counterActions.add(inputElement.current.value))
 inputElement.current.value=""
 
   }
@@ -42,11 +39,8 @@ inputElement.current.value=""
 const handleSubstraction=()=>{
   let value=inputElement.current.value;
  
-  if(value){
-  dispatch({type:"SUBSTRACT",
-payload:value
-  
-})
+  if(inputElement.current.value){
+    dispatch(counterActions.subtract(inputElement.current.value))
 inputElement.current.value=""
 
   }
